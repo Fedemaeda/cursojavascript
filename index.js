@@ -36,7 +36,7 @@ if ( nombreDeUsuario === "admin" ){
         }
 }
 
-const verlistaClientes = prompt ("Si desea ver la lista de clientes escriba yes, de lo contrario el programa se cerrará en 10 segundos") 
+const verlistaClientes = prompt ("Si desea ver la lista de clientes de menor a mayor adescriba yes, de lo contrario el programa se cerrará en 10 segundos") 
 
 
 if ( verlistaClientes == "yes" ){
@@ -45,37 +45,42 @@ if ( verlistaClientes == "yes" ){
  const clientes = [
     {
         nombre: "Roberto",
-        
+        edad: 55
     },
     {
         nombre: "Román",
-        
+        edad: 40
     },
     {
         nombre: "Manuel",
-        
+        edad: 21
     },
     {
         nombre: "Eizabeth",
-        
+        edad: 36
     },
     {
         nombre: "Tomás",
-        
+        edad: 22
     },
     {
         nombre: "Verónica",
-        
+        edad: 30
     },
  ]
 
  console.log(clientes)
 
- for ( let i = 0; i < clientes.length; i++ ){
-
-    console.log(clientes[i].nombre)
+ clientes.sort( (a, b) => {
  
- }
+     if(a.edad > b.edad){
+         return 1
+     }
+     else if( a.edad < b.edad){
+         return -1
+     }
+ })
+
 
 } else{
     alert("Ha elegido no ver la lista de clientes")
@@ -85,21 +90,3 @@ if ( verlistaClientes == "yes" ){
 }
 
 
-// After Class
-/*
-
-function incremento (base, cantidad) {
-
-    const baseEIncremento = base + 5
-
-    for (let i = base; i < baseEIncremento; i++){
-
-        console.log( `Incremento ${i}: ${i + cantidad}`)
-    }
-
-}
-
-incremento(10, 5)
-
-
-*/
